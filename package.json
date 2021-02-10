@@ -1,0 +1,41 @@
+{
+    "name": "vite-plugin-stylelint",
+    "version": "0.0.0",
+    "description": "Vite 2 plugin to lint CSS with stylelint.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist/**/*"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint src",
+        "prepare" : "npm run build",
+        "prepublishOnly" : "npm run lint",
+        "preversion" : "npm run lint",
+        "version" : "git add -A src",
+        "postversion" : "git push && git push --tags"
+    },
+    "keywords": [
+        "vite-plugin",
+        "stylelint"
+    ],
+    "author": {
+        "name": "Aleksei Matlash",
+        "email": "alexei.matlash@yandex.ru",
+        "url": "https://github.com/AMatlash"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AMatlash/vite-plugin-stylelint"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.15.0",
+        "@typescript-eslint/parser": "^4.15.0",
+        "eslint": "^7.19.0",
+        "eslint-import-resolver-typescript": "^2.3.0",
+        "eslint-plugin-import": "^2.22.1",
+        "typescript": "^4.1.4"
+    }
+}
