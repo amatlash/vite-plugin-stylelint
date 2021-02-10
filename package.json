@@ -1,6 +1,6 @@
 {
     "name": "vite-plugin-stylelint",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Vite 2 plugin to lint CSS with stylelint.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -10,11 +10,11 @@
     "scripts": {
         "build": "tsc",
         "lint": "eslint src",
-        "prepare" : "npm run build",
-        "prepublishOnly" : "npm run lint",
-        "preversion" : "npm run lint",
-        "version" : "git add -A src",
-        "postversion" : "git push && git push --tags"
+        "prepare": "npm run build",
+        "prepublishOnly": "npm run lint",
+        "preversion": "npm run lint",
+        "version": "git add -A src",
+        "postversion": "git push && git push --tags"
     },
     "keywords": [
         "vite-plugin",
