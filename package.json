@@ -1,6 +1,6 @@
 {
     "name": "@amatlash/vite-plugin-stylelint",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Vite 2 plugin to lint CSS with stylelint.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
