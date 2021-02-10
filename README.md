@@ -1,4 +1,4 @@
-# vite-plugin-stylelint
+# vite-plugin-stylelint (🛑 WIP 🛑)
 
 [![npm (scoped)](https://img.shields.io/npm/v/@amatlash/vite-plugin-stylelint)](https://www.npmjs.com/package/@amatlash/vite-plugin-stylelint)
 
