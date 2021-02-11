@@ -29,6 +29,9 @@
         "type": "git",
         "url": "git+https://github.com/AMatlash/vite-plugin-stylelint"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "license": "MIT",
     "devDependencies": {
         "@types/estree": "0.0.46",
