@@ -1,4 +1,5 @@
 import * as path from 'path';
+import { clearTimeout, setTimeout } from 'timers';
 
 /**
  * Normalizes file path. Allows to locate local files by url with query.
@@ -14,11 +15,46 @@ export function normalizePath(filePath: string): string {
 
 export interface Options {
     /** A single file, or array of files, to include when linting. */
-    include?: string | string[];
+    include?: string | string[] | RegExp;
     /** A single file, or array of files, to exclude when linting. */
-    exclude?: string | string[];
+    exclude?: string | string[] | RegExp;
 }
 
-export function filePathGotQuery(id: string): boolean {
-    return id.includes('?');
+/**
+ * Collection of stylelint formatted outputs.
+ * Helps to prevent loosing previously added outputs on any Vite dev-server update.
+ * @key filePath
+ * @value stylelinter output
+ */
+export type OutputCollection = Map<string, string>;
+
+/**
+ * Creates specific Map to handle linter outputs
+ */
+export function createOutputCollection(): OutputCollection {
+    return new Map<string, string>();
+}
+
+/**
+ * Debounce timeout for disaplying outputs
+ */
+let timeoutId: NodeJS.Timeout;
+
+/**
+ * Displays error stack via terminal (debounced)
+ */
+export function displayOutput(collection: OutputCollection): void {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout( () => {
+        debouncedDisplayOutput(collection)
+    }, 200);
+}
+
+/**
+ * Debounced function to prevent multiple output display at dev-server updates
+ */
+function debouncedDisplayOutput(collection: OutputCollection): void {
+    collection.forEach(output => {
+        console.log(output);
+    });
 }
