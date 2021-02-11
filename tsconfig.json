@@ -2,12 +2,12 @@
     "compilerOptions": {
         "target": "ESNext",
         "module": "ESNext",
+        "moduleResolution": "Node",
         "sourceMap": true,
         "rootDir": "src",
         "outDir": "dist",
         "declaration": true,
         "strict": true,
-        "moduleResolution": "Node",
         "lib": ["ESNext", "dom"]
     },
     "include": ["src"],
