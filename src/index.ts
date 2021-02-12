@@ -8,8 +8,9 @@ import type { Options } from './utils';
 
 export default function viteStylelint(options: Options = {}): Plugin {
     const filter = createFilter(
-        options.include,
-        options.exclude || /node_modules/);
+        options.include || /.*\.(vue|scss|sass|css|postcss)/,
+        options.exclude || /node_modules/
+    );
 
     const outputCollection = createOutputCollection();
 
@@ -33,7 +34,10 @@ export default function viteStylelint(options: Options = {}): Plugin {
                         outputCollection.delete(file);
                     }
                 })
-                // .catch(error => console.error(error))
+                .catch(error => {
+                    this.warn('It looks like you configured bad include/exclude vite-plugin-stylelint options.');
+                    this.error(error);
+                })
                 .finally(() => {
                     displayOutput(outputCollection);
                 })

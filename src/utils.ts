@@ -14,9 +14,15 @@ export function normalizePath(filePath: string): string {
 }
 
 export interface Options {
-    /** A single file, or array of files, to include when linting. */
+    /**
+     * A single file, or array of files, to include when linting.
+     * @default /.*\.(vue|scss|sass|css|postcss)/
+     */
     include?: string | string[] | RegExp;
-    /** A single file, or array of files, to exclude when linting. */
+    /**
+     * A single file, or array of files, to exclude when linting.
+     * @default /node_modules/
+     */
     exclude?: string | string[] | RegExp;
 }
 
