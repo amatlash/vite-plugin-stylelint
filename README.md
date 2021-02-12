@@ -2,7 +2,7 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@amatlash/vite-plugin-stylelint)](https://www.npmjs.com/package/@amatlash/vite-plugin-stylelint)
 
-Vite 2 plugin for [stylelint](https://github.com/stylelint/stylelint) that works with the dev server.
+[Vite 2](https://github.com/vitejs/vite) plugin for [stylelint](https://github.com/stylelint/stylelint) that works with the dev server.
 
 By default displays warnings and errors to the terminal`s console.
 
@@ -23,9 +23,30 @@ export default defineConfig({
 });
 ```
 
-## Configure
+## Configuration
 
-To configure linting options check out the official [stylelint docs](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configure.md).
+Plugin can operate only with default `.stylelintrc` files.
+
+### Fast setup
+
+#### Install standart config
+
+```
+npm install stylelint-config-standard --save-dev
+```
+
+#### Create `.stylelintrc.js` in your project's root
+
+```js
+// .stylelintrc.js
+module.exports = {
+    extends: "stylelint-config-standard"
+}
+```
+
+### Advanced setup
+
+For advanced config linting options check out the official [stylelint docs](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configure.md).
 
 ## License
 
