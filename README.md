@@ -23,11 +23,30 @@ export default defineConfig({
 });
 ```
 
-## Configure
+## Configuration
 
 Plugin can operate only with default `.stylelintrc` files.
 
-To configure linting options check out the official [stylelint docs](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configure.md).
+### Fast setup
+
+#### Install standart config
+
+```
+npm install stylelint-config-standard --save-dev
+```
+
+#### Create `.stylelintrc.js` in your project's root
+
+```js
+// .stylelintrc.js
+module.exports = {
+    extends: "stylelint-config-standard"
+}
+```
+
+### Advanced setup
+
+For advanced config linting options check out the official [stylelint docs](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configure.md).
 
 ## License
 
